@@ -627,7 +627,7 @@ void prepare_circles(void)
    }
  }
 
-
+ destroy_bitmap(temp_bitmap);
 
  for (i = 0; i < RLE_RINGS; i ++)
  {
@@ -665,10 +665,6 @@ void prepare_circles(void)
   }
   destroy_bitmap(temp_bitmap);
  }
-
-  destroy_bitmap(temp_bitmap);
-  // temp_bitmap is not created each time through loop for icircles.
-
 }
 
 

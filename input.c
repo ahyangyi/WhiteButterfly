@@ -86,7 +86,11 @@ static int sshot_counter = 0;
    blit(screen, scrshot_bmp, 100,0,0,0,600,600);
 
   strcpy(sfile, "sshot");
-  strcat(sfile, itoa(scrs, istr, 10));
+  {
+    char buf[20];
+    sprintf(buf, "%d", scrs);
+    strcat(sfile, buf);
+  }
   strcat(sfile, ".bmp");
   save_bitmap(sfile, scrshot_bmp, palet);
   rectfill(screen, 100, 0, 700, 0, COL_WHITE);
