@@ -1896,7 +1896,7 @@ void init_sound(void)
    }
 
    reserve_voices(16, 0); // not sure this is necessary
-   if (install_sound (DIGI_AUTODETECT, MIDI_AUTODETECT, NULL) == -1)
+   if (install_sound (DIGI_AUTODETECT, MIDI_NONE, NULL) == -1)
    {
     exit(1); // don't bother with proper error handling yet. This should just disable sound.
    }
