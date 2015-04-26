@@ -5,7 +5,7 @@ LDFLAGS=-lm -lalleg
 SOURCE=$(wildcard *.c)
 DEPENDENCY=$(wildcard *.h) Makefile
 
-all: bufferfly
+all: butterfly
 
-bufferfly: $(SOURCE) $(DEPENDENCY)
-	$(CC) $(SOURCE) $(CFLAGS) $(LDFLAGS) -o bufferfly
+butterfly: $(SOURCE) $(DEPENDENCY)
+	$(CC) $(SOURCE) $(CFLAGS) $(LDFLAGS) -o butterfly
