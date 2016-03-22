@@ -18,6 +18,7 @@ grand(n) - random number from 1 to n
 #include "config.h"
 
 #include "allegro.h"
+#include "stuff.h"
 
 #include <math.h>
 
@@ -35,8 +36,6 @@ float decoy_table [ANGLE_1]; // not used
 float cos_table [ANGLE_1];
 float sin_table [ANGLE_1];
 
-inline int xpart(int angle, int length);
-
 void init_trig(void)
 {
  int i;
@@ -48,16 +47,6 @@ void init_trig(void)
  }
 
 
-}
-
-inline int xpart(int angle, int length)
-{
- return (cos_table [angle & 1023] * length);
-}
-
-inline int ypart(int angle, int length)
-{
- return (sin_table [angle & 1023] * length);
 }
 
 float lcos(int angle)
