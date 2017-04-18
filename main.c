@@ -11,6 +11,7 @@ I keep forgetting this and doing it by accident.
 #include "allegro.h"
 
 #include <string.h>
+#include <stdio.h>
 #include <math.h>
 
 #include "globvars.h"
@@ -141,16 +142,17 @@ I haven't tested it).
 
    {
 
-//     char *HPath = getenv("HOME");
+     char *HPath = getenv("HOME");
 
 // use this if for some reason you're running Windows Vista:
-        char *HPath = getenv("APPDATA");
+//        char *HPath = getenv("APPDATA");
 
 	 char ConfigPath[2048];
 
-	 sprintf(ConfigPath, "%s/.Whitebutterfly", HPath);
-	 set_config_file(ConfigPath);
-
+	 if (snprintf(ConfigPath, 2048, "%s/.Whitebutterfly", HPath) < 2048)
+     {
+	   set_config_file(ConfigPath);
+     }
    }
 #else
    set_config_file("init.txt");
