@@ -1,5 +1,6 @@
-CC=gcc
-CFLAGS=-O2 -march=native
+CC?=gcc
+CFLAGS?=-O2 -march=native
+CFLAGS_SURPRESS_WARNING=-Wno-format-security
 LDFLAGS=-lm -lalleg
 
 SOURCE=$(wildcard *.c)
@@ -12,4 +13,4 @@ butterfly: $(OBJECTS)
 	$(CC) $^ $(LDFLAGS) -o $@
 
 %.o: %.c $(DEPENDENCY)
-	$(CC) $< $(CFLAGS) $(LDFLAGS) -c -o $@
+	$(CC) $< $(CFLAGS) $(CFLAGS_SURPRESS_WARNING) -c -o $@
