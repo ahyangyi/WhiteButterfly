@@ -770,7 +770,7 @@ void key_box(const char ktext [], int command)
  rectfill(display, 200, 240, 400, 290, COL_OUTLINE);
  rect(display, 201, 241, 399, 289, COL_COL1);
 
- textprintf_centre_ex(display, font, 300, 257, -1, -1, ktext);
+ textprintf_centre_ex(display, font, 300, 257, -1, -1, "%s", ktext);
 
  vsync();
  blit(display, screen, 0, 0, 100, 0, 600, 600);
@@ -1432,7 +1432,7 @@ char ftext [8] [9] [150] =
  rect(display, TITLE_X - 80, TITLE_Y - 0, TITLE_X + 80, TITLE_Y + 30, TRANS_BLUE3);
  rect(display, TITLE_X - 81, TITLE_Y - 1, TITLE_X + 81, TITLE_Y + 31, TRANS_BLUE2);
 
- textprintf_centre_ex(display, font, TITLE_X, TITLE_Y + 10, -1, -1, ftext [ship_chosen] [0]);
+ textprintf_centre_ex(display, font, TITLE_X, TITLE_Y + 10, -1, -1, "%s", ftext [ship_chosen] [0]);
 
 
  if (ship_chosen == 4 && options.unlock [arena.difficulty] == 0)
@@ -1446,18 +1446,18 @@ char ftext [8] [9] [150] =
  hline(display, 198, LINE1_Y + 30, 320, TRANS_BLUE3);
  textprintf_ex(display, font, TEXT_X - 5, LINE1_Y + 20, -1, -1, "weapons");
 
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 40, -1, -1, ftext [ship_chosen] [1]);
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 55, -1, -1, ftext [ship_chosen] [2]);
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 70, -1, -1, ftext [ship_chosen] [3]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 40, -1, -1, "%s", ftext [ship_chosen] [1]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 55, -1, -1, "%s", ftext [ship_chosen] [2]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 70, -1, -1, "%s", ftext [ship_chosen] [3]);
 // textprintf_ex(display, font, TEXT_X, LINE1_Y + 60, -1, -1, ftext [ship_chosen] [4]);
 
  hline(display, 198, LINE1_Y + 110, 320, TRANS_BLUE3);
  textprintf_ex(display, font, TEXT_X - 5, LINE1_Y + 100, -1, -1, "controls");
 
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 120, -1, -1, ftext [ship_chosen] [4]);
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 135, -1, -1, ftext [ship_chosen] [5]);
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 150, -1, -1, ftext [ship_chosen] [6]);
- textprintf_ex(display, font, TEXT_X, LINE1_Y + 165, -1, -1, ftext [ship_chosen] [7]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 120, -1, -1, "%s", ftext [ship_chosen] [4]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 135, -1, -1, "%s", ftext [ship_chosen] [5]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 150, -1, -1, "%s", ftext [ship_chosen] [6]);
+ textprintf_ex(display, font, TEXT_X, LINE1_Y + 165, -1, -1, "%s", ftext [ship_chosen] [7]);
   }
 
  END_TRANS

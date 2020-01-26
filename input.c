@@ -2264,7 +2264,7 @@ void jstick_calibrate(void)
 
       msg = calibrate_joystick_name(0);
 
-      textprintf_centre_ex(screen, font, 320, 170, -1, -1, msg);
+      textprintf_centre_ex(screen, font, 320, 170, -1, -1, "%s", msg);
       textprintf_centre_ex(screen, font, 320, 200, -1, -1, "AND PRESS SPACE");
 
       do

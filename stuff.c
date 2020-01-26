@@ -168,7 +168,7 @@ int pulsate(int speed, int amount, int county)
 void error_message_out(const char *errm)
 {
       set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
-      allegro_message(errm);
+      allegro_message("%s", errm);
       exit(1);
 }
 
