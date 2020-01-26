@@ -6,9 +6,9 @@ SOURCE=$(wildcard *.c)
 OBJECTS=$(patsubst %.c,%.o,$(SOURCE))
 DEPENDENCY=$(wildcard *.h) Makefile
 
-all: butterfly
+all: white-butterfly
 
-butterfly: $(OBJECTS)
+white-butterfly: $(OBJECTS)
 	$(CC) $^ $(LDFLAGS) -o $@
 
 %.o: %.c $(DEPENDENCY)
